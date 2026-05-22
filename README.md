@@ -1,1 +1,1 @@
-# EtsyLocalOps
+# LocalShopOps
