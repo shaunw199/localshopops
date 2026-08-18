@@ -1,100 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LocalShopOps</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 860px;
-      margin: 56px auto;
-      padding: 0 22px;
-      line-height: 1.62;
-      color: #222;
-      background: #fff;
-    }
-    h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-    h2 {
-      font-size: 22px;
-      margin-top: 32px;
-    }
-    .subtitle {
-      color: #555;
-      margin-bottom: 28px;
-    }
-    .notice {
-      background: #f7f7f7;
-      border-left: 4px solid #555;
-      padding: 16px;
-      margin-top: 24px;
-    }
-    ul {
-      padding-left: 22px;
-    }
-  </style>
+  <meta name="description" content="LocalShopOps helps independently owned Etsy sellers manage authorized order, listing, production, and fulfillment workflows.">
+  <title>LocalShopOps | Seller Operations for Independently Owned Etsy Shops</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>LocalShopOps</h1>
-  <p class="subtitle">Desktop-based internal operations assistant for authorized shop workflows.</p>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">L</span>LocalShopOps</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Overview</h2>
-  <p>
-    LocalShopOps is a desktop-based internal operations assistant designed to help manage my own
-    authorized Etsy shop operations.
-  </p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Seller operations, with each shop in control</p>
+        <h1>Operational tools for independently owned Etsy shops.</h1>
+        <p class="lead">
+          LocalShopOps helps Etsy sellers organize authorized order data, review and prepare listings,
+          produce operational reports, and coordinate production and fulfillment—without sharing Etsy passwords.
+        </p>
+        <div class="actions">
+          <a class="button" href="#how-it-works">See how authorization works</a>
+          <a class="button secondary" href="security.html">Review data protections</a>
+        </div>
+        <div class="status-note">
+          <strong>Availability:</strong> LocalShopOps began as a tool for the developer's own shop and is currently
+          used by a limited pilot group of independently owned Etsy sellers. Broader seller availability is pending
+          Etsy Commercial Access approval.
+        </div>
+      </div>
+    </section>
 
-  <p>
-    The tool helps organize Etsy CSV exports, review order and fulfillment data, prepare tracking
-    update plans for manual review, generate listing draft suggestions, prepare listing edit
-    recommendations, create offline reports, and support local production or fulfillment workflows.
-  </p>
+    <section id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Current purpose</p>
+          <h2>One workspace for seller-authorized operations</h2>
+          <p>Functions are enabled only for the shop and permissions approved by the seller.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="number">01</span>
+            <h3>Order and sales review</h3>
+            <p>Synchronize and organize authorized order and sales records for operational review and reporting.</p>
+          </article>
+          <article class="card">
+            <span class="number">02</span>
+            <h3>Listing workflows</h3>
+            <p>Review listings and prepare seller-initiated listing drafts and edits with explicit confirmation.</p>
+          </article>
+          <article class="card">
+            <span class="number">03</span>
+            <h3>Production and fulfillment</h3>
+            <p>Create controlled reports, production instructions, supplier workbooks, and fulfillment task lists.</p>
+          </article>
+          <article class="card">
+            <span class="number">04</span>
+            <h3>Operational reporting</h3>
+            <p>Generate shop-specific CSV and Excel reports while preserving seller and shop boundaries.</p>
+          </article>
+          <article class="card">
+            <span class="number">05</span>
+            <h3>Permissions and confirmation</h3>
+            <p>Use role-based access and require an authorized seller action before Etsy write operations.</p>
+          </article>
+          <article class="card">
+            <span class="number">06</span>
+            <h3>Auditability</h3>
+            <p>Maintain shop-scoped job status and audit records to support review and troubleshooting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <h2>Current Operating Mode</h2>
-  <p>
-    LocalShopOps is currently operated in Disabled Mode. It does not automatically submit changes
-    to Etsy, publish listings, edit listings, update orders, or perform live Etsy operations without
-    explicit user authorization.
-  </p>
+    <section id="how-it-works" class="alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">OAuth authorization</p>
+          <h2>Each seller connects their own Etsy account</h2>
+          <p>LocalShopOps uses Etsy Open API v3 and Etsy OAuth 2.0. It does not ask sellers to provide Etsy passwords.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="number">1</span>
+            <h3>Seller starts the connection</h3>
+            <p>The seller chooses to connect Etsy from LocalShopOps and is redirected to Etsy's authorization screen.</p>
+          </article>
+          <article class="card">
+            <span class="number">2</span>
+            <h3>Etsy collects consent</h3>
+            <p>The seller signs in directly with Etsy and reviews the specific permissions requested for enabled features.</p>
+          </article>
+          <article class="card">
+            <span class="number">3</span>
+            <h3>Access remains shop-scoped</h3>
+            <p>LocalShopOps binds the authorization to that seller and shop. Other sellers cannot access it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    The application is intended for internal use only with Etsy shops that have granted proper
-    authorization. It does not collect Etsy passwords, scrape Etsy pages, redirect sales away from
-    Etsy, replace Etsy checkout, or provide public marketplace services.
-  </p>
+    <section>
+      <div class="container split">
+        <div class="section-heading">
+          <p class="eyebrow">Minimum permissions</p>
+          <h2>Only the access needed for enabled functions</h2>
+          <p>Scopes may vary by feature. A seller must re-authorize if an additional scope is needed.</p>
+        </div>
+        <div>
+          <table class="scope-table">
+            <thead><tr><th>OAuth scope</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>transactions_r</code></td><td>Read the authorizing seller's purchase and sales records needed for order operations.</td></tr>
+              <tr><td><code>listings_r</code></td><td>Read the authorizing seller's private, inactive, or expired listing data.</td></tr>
+              <tr><td><code>listings_w</code></td><td>Create or edit seller-authorized listing drafts when that feature is enabled.</td></tr>
+              <tr><td><code>shops_r</code></td><td>Read necessary information about the Etsy shop connected by the seller.</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Not requested for current functions:</strong> listing deletion and buyer email access.</p>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    It does not send order, shipping, or tracking messages to Etsy members. Any tracking or
-    fulfillment output is prepared for manual review.
-  </p>
+    <section class="alt">
+      <div class="container split">
+        <div class="section-heading">
+          <p class="eyebrow">Data boundaries</p>
+          <h2>Seller and shop isolation is a core product rule</h2>
+          <p>LocalShopOps is designed so one seller cannot see or operate on another seller's Etsy data.</p>
+        </div>
+        <ul class="check-list">
+          <li>OAuth credentials and connection records are separated by seller and shop.</li>
+          <li>Orders, listings, jobs, permissions, exports, and audit records remain shop-scoped.</li>
+          <li>No cross-seller search, copying, or multi-shop listing modification is provided.</li>
+          <li>Etsy data is not sold, exchanged, used for advertising, or used to train AI models.</li>
+          <li>No Etsy page scraping and no collection of Etsy member passwords.</li>
+          <li>Sellers can revoke Etsy authorization and request deletion of associated LocalShopOps data.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-  <h2>Future Etsy API Use</h2>
-  <p>
-    When Etsy API access is enabled in the future, the application will only access authorized Etsy
-    shop data through Etsy Open API v3 and will request the minimum permissions required for the
-    specific approved operation. Data will be stored locally only when reasonably necessary for
-    reporting, audit, and operational review.
-  </p>
-
-  <h2>Primary Functions</h2>
-  <ul>
-    <li>Organizing Etsy CSV exports</li>
-    <li>Reviewing order, listing, and fulfillment data</li>
-    <li>Preparing tracking update plans for manual review</li>
-    <li>Generating listing draft suggestions</li>
-    <li>Generating listing edit recommendations</li>
-    <li>Creating offline Excel and CSV reports</li>
-    <li>Mapping SKU, images, mockups, and production assets</li>
-    <li>Preparing production and fulfillment task lists</li>
-    <li>Keeping local audit records for authorized shop operations</li>
-  </ul>
-
-  <div class="notice">
-    The term "Etsy" is a trademark of Etsy, Inc. This application uses Etsy's API,
-    but is not endorsed or certified by Etsy.
-  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>LocalShopOps</h2>
+          <p>Seller-authorized operational tools for independently owned Etsy shops.</p>
+          <p>Provided by Grace &amp; Crafted Inc.</p>
+          <p><a href="mailto:gracecrafted2025@outlook.com">gracecrafted2025@outlook.com</a></p>
+        </div>
+        <div class="footer-links">
+          <strong>Trust</strong>
+          <a href="security.html">Security &amp; Data Isolation</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <strong>Help</strong>
+          <a href="support.html">Support</a>
+          <a href="support.html#disconnect">Disconnect Etsy</a>
+          <a href="support.html#delete">Data deletion</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        The term “Etsy” is a trademark of Etsy, Inc. LocalShopOps uses Etsy's API but is not endorsed or certified by Etsy.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

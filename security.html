@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Security, OAuth authorization, and seller-level data isolation practices for LocalShopOps.">
+  <title>Security & Data Isolation | LocalShopOps</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">L</span>LocalShopOps</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html#features">Features</a>
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container">
+      <p class="eyebrow">Trust center</p>
+      <h1>Security &amp; Data Isolation</h1>
+      <p class="meta">Last updated: August 17, 2026</p>
+
+      <div class="notice">
+        LocalShopOps is designed for independently owned Etsy shops. Each seller's authorization and operational data
+        remain separated from other sellers and shops.
+      </div>
+
+      <h2>OAuth authorization</h2>
+      <p>
+        Etsy access is initiated by the seller and completed directly through Etsy OAuth 2.0. LocalShopOps does not
+        collect or store Etsy passwords. The seller reviews the requested scopes on Etsy before granting access.
+      </p>
+
+      <h2>Seller and shop boundaries</h2>
+      <ul>
+        <li>Every Etsy connection is bound to the seller and shop that completed authorization.</li>
+        <li>OAuth tokens, shop data, orders, listings, jobs, exports, permissions, and audit records are shop-scoped.</li>
+        <li>Authorization checks are required before shop data is displayed or an operation is performed.</li>
+        <li>LocalShopOps does not provide cross-seller search, cross-shop listing copying, or multi-shop listing edits.</li>
+      </ul>
+
+      <h2>Minimum access</h2>
+      <p>
+        LocalShopOps requests only the OAuth scopes needed for enabled functions. Listing deletion and buyer email
+        access are not part of current functionality. A change in permissions requires seller re-authorization through Etsy.
+      </p>
+
+      <h2>Data use restrictions</h2>
+      <p>Etsy data processed by LocalShopOps is used only to provide the service requested by the authorizing seller. It is not:</p>
+      <ul>
+        <li>sold or exchanged;</li>
+        <li>shared with another seller;</li>
+        <li>used for third-party advertising;</li>
+        <li>used to train artificial intelligence or machine-learning models; or</li>
+        <li>obtained by scraping Etsy webpages.</li>
+      </ul>
+
+      <h2>Operational safeguards</h2>
+      <ul>
+        <li>Role and shop-based access controls.</li>
+        <li>Explicit user confirmation for Etsy write operations.</li>
+        <li>Audit records for sensitive and external operations.</li>
+        <li>Duplicate-submission controls and validation of write requests.</li>
+        <li>Rate-limit handling and controlled retry behavior.</li>
+        <li>Incident review and notification procedures.</li>
+      </ul>
+
+      <h2>Revocation and deletion</h2>
+      <p>
+        Sellers may revoke Etsy authorization from Etsy's Connected Apps page. They may also contact LocalShopOps to
+        disconnect a shop and request deletion of associated account and operational data. See the
+        <a href="support.html#disconnect">disconnect instructions</a> and
+        <a href="support.html#delete">data deletion process</a>.
+      </p>
+
+      <h2>Reporting a security concern</h2>
+      <p>Security concerns should be reported to <a href="mailto:gracecrafted2025@outlook.com">gracecrafted2025@outlook.com</a> or through the <a href="support.html">Support page</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h2>LocalShopOps</h2><p>Provided by Grace &amp; Crafted Inc.</p><p><a href="mailto:gracecrafted2025@outlook.com">gracecrafted2025@outlook.com</a></p></div>
+        <div class="footer-links"><strong>Policies</strong><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+        <div class="footer-links"><strong>Help</strong><a href="support.html">Support</a><a href="support.html#delete">Data deletion</a></div>
+      </div>
+      <div class="footer-bottom">The term “Etsy” is a trademark of Etsy, Inc. LocalShopOps uses Etsy's API but is not endorsed or certified by Etsy.</div>
+    </div>
+  </footer>
+</body>
+</html>
