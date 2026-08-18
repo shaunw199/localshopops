@@ -24,17 +24,19 @@
     <div class="container">
       <p class="eyebrow">Trust center</p>
       <h1>Security &amp; Data Isolation</h1>
-      <p class="meta">Last updated: August 17, 2026</p>
+      <p class="meta">Last updated: August 18, 2026</p>
 
       <div class="notice">
         LocalShopOps is designed for independently owned Etsy shops. Each seller's authorization and operational data
         remain separated from other sellers and shops.
       </div>
 
-      <h2>OAuth authorization</h2>
+      <h2>Etsy Open API v3 authorization</h2>
       <p>
-        Etsy access is initiated by the seller and completed directly through Etsy OAuth 2.0. LocalShopOps does not
-        collect or store Etsy passwords. The seller reviews the requested scopes on Etsy before granting access.
+        Etsy access is initiated by the seller and completed through Etsy Open API v3 using Etsy's OAuth 2.0
+        Authorization Code flow with PKCE. LocalShopOps does not collect or store Etsy passwords. The seller signs in
+        directly with Etsy and reviews the requested scopes before granting access. Authorization responses are checked
+        against a single-use state value before tokens are accepted.
       </p>
 
       <h2>Seller and shop boundaries</h2>
@@ -47,8 +49,10 @@
 
       <h2>Minimum access</h2>
       <p>
-        LocalShopOps requests only the OAuth scopes needed for enabled functions. Listing deletion and buyer email
-        access are not part of current functionality. A change in permissions requires seller re-authorization through Etsy.
+        The planned production Commercial Access connection will be limited to <code>transactions_r</code>, <code>listings_r</code>,
+        <code>listings_w</code>, and <code>shops_r</code> for currently planned functions. The listing-deletion scope and
+        access to the <code>buyer_email</code> field are not part of current functionality. Any later increase in access
+        requires a documented product need and seller re-authorization through Etsy.
       </p>
 
       <h2>Data use restrictions</h2>
@@ -57,8 +61,25 @@
         <li>sold or exchanged;</li>
         <li>shared with another seller;</li>
         <li>used for third-party advertising;</li>
+        <li>used for cross-seller benchmarking, marketplace analytics, or competitive analysis;</li>
         <li>used to train artificial intelligence or machine-learning models; or</li>
         <li>obtained by scraping Etsy webpages.</li>
+      </ul>
+
+      <h2>Seller-directed supplier exports</h2>
+      <p>
+        Supplier, production, and fulfillment exports require an authorized user action and a seller-selected destination.
+        They may contain only the order or fulfillment fields reasonably necessary for that task. LocalShopOps does not
+        automatically send Etsy member data to suppliers, other sellers, or unrelated third parties.
+      </p>
+
+      <h2>Commercial data freshness and caching controls</h2>
+      <p>Before broader seller access is opened, LocalShopOps will implement and verify the following controls:</p>
+      <ul>
+        <li>Displayed listing content will be refreshed or revalidated within Etsy's six-hour limit.</li>
+        <li>Other displayed Etsy content will be refreshed or revalidated within Etsy's 24-hour limit.</li>
+        <li>Data that cannot be refreshed within the applicable limit will not be presented as current Etsy data.</li>
+        <li>Cached Etsy content will be retained only as long as reasonably necessary for the seller-requested service.</li>
       </ul>
 
       <h2>Operational safeguards</h2>
@@ -70,6 +91,20 @@
         <li>Rate-limit handling and controlled retry behavior.</li>
         <li>Incident review and notification procedures.</li>
       </ul>
+
+      <h2>Commercial launch control</h2>
+      <p>
+        Before broader seller access is opened, LocalShopOps will require an affirmative click-through acceptance of the
+        current Terms of Service and Privacy Policy before an Etsy account can be connected. Acceptance records will
+        include the LocalShopOps account, policy versions, acceptance time, and proportionate security audit information.
+      </p>
+
+      <h2>Incident notification</h2>
+      <p>
+        If Etsy Member data accessed through the Etsy API is compromised or suspected to be compromised, Grace &amp;
+        Crafted Inc. will notify Etsy at <a href="mailto:dpo@etsy.com">dpo@etsy.com</a> and the affected Etsy seller
+        promptly, and no later than 24 hours after discovery.
+      </p>
 
       <h2>Revocation and deletion</h2>
       <p>
@@ -91,7 +126,7 @@
         <div class="footer-links"><strong>Policies</strong><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
         <div class="footer-links"><strong>Help</strong><a href="support.html">Support</a><a href="support.html#delete">Data deletion</a></div>
       </div>
-      <div class="footer-bottom">The term “Etsy” is a trademark of Etsy, Inc. LocalShopOps uses Etsy's API but is not endorsed or certified by Etsy.</div>
+      <div class="footer-bottom">The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</div>
     </div>
   </footer>
 </body>

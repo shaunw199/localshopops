@@ -24,7 +24,7 @@
     <div class="container">
       <p class="eyebrow">Policy</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective and last updated: August 17, 2026</p>
+      <p class="meta">Effective and last updated: August 18, 2026</p>
 
       <div class="notice">
         This Privacy Policy explains how Grace &amp; Crafted Inc. (“LocalShopOps,” “we,” “us,” or “our”) processes information
@@ -57,8 +57,8 @@
       <h3>Order, transaction, and fulfillment information</h3>
       <p>
         Order identifiers, purchased items, quantities, SKUs, variations, personalization details, order status, and
-        buyer or shipping information only when reasonably necessary to support the seller's order production and
-        fulfillment workflows. LocalShopOps does not request buyer email access for current functions.
+        recipient or destination information only when reasonably necessary to support the seller's order production and
+        fulfillment workflows. LocalShopOps does not request access to the <code>buyer_email</code> field for current functions.
       </p>
 
       <h3>Operational and security records</h3>
@@ -82,22 +82,47 @@
       </p>
 
       <h2>5. How we do not use Etsy data</h2>
-      <p>We do not sell or exchange Etsy data. We do not share one seller's data with another seller, use it for third-party advertising, or use it to train AI or machine-learning models. We do not scrape Etsy webpages.</p>
+      <p>
+        We do not sell or exchange Etsy data. We do not share one seller's data with another seller, use it for
+        third-party advertising, or use it to train AI or machine-learning models. We do not use Etsy API data for
+        cross-seller benchmarking, marketplace analytics, or competitive analysis. We do not scrape Etsy webpages.
+      </p>
 
       <h2>6. Sharing and service providers</h2>
+      <h3>Infrastructure and technical providers</h3>
       <p>
         We may use infrastructure or technical service providers only when reasonably necessary to operate, secure, or
         support LocalShopOps. Such providers may process information only for those services and under appropriate
-        confidentiality and security obligations. We may disclose information when required by law or to protect users,
-        the service, or legal rights.
+        confidentiality and security obligations.
       </p>
 
-      <h2>7. Storage, security, and retention</h2>
+      <h3>Seller-designated production and fulfillment providers</h3>
+      <p>
+        At the seller's direction, an authorized user may generate a production, supplier, or fulfillment export for a
+        provider selected by that seller. Such an export may contain order, item, personalization, recipient, or
+        destination information only to the extent reasonably necessary to complete the seller-directed task.
+        LocalShopOps does not automatically disclose Etsy member data to suppliers, other sellers, or unrelated third parties.
+      </p>
+      <p>We may also disclose information when required by law or to protect users, the service, or legal rights.</p>
+
+      <h2>7. Etsy data freshness, caching, security, and retention</h2>
       <p>
         We apply technical and organizational safeguards intended to prevent unauthorized access, misuse, alteration,
-        loss, or disclosure. We retain Etsy data only for as long as reasonably necessary to provide the requested
-        service, maintain security and audit records, resolve disputes, and meet legal obligations. We refresh displayed
-        Etsy information as required and avoid retaining cached Etsy data longer than operationally necessary.
+        loss, or disclosure. Before the Commercial Access connection is opened to broader seller use, LocalShopOps will
+        enforce the following limits whenever Etsy API content is displayed:
+      </p>
+      <ul>
+        <li>displayed Etsy listing content will be refreshed or revalidated so it is not more than six hours older than the corresponding information on Etsy;</li>
+        <li>other displayed Etsy content will be refreshed or revalidated so it is not more than 24 hours older than the corresponding information on Etsy;</li>
+        <li>content that cannot be refreshed within the applicable limit is not presented as current Etsy data; and</li>
+        <li>cached Etsy content is retained only as long as reasonably necessary to provide the seller-requested service.</li>
+      </ul>
+      <p>
+        Etsy data is otherwise retained only as long as reasonably necessary to provide the requested service, maintain
+        proportionate security and audit records, resolve disputes, and meet legal obligations. After a verified account
+        or shop deletion request, OAuth credentials are removed promptly and Etsy operational data that is no longer
+        required is deleted or de-identified within 30 days, except limited records that must be retained by law or for
+        security, fraud-prevention, or dispute-resolution purposes.
       </p>
 
       <h2>8. Seller choices and controls</h2>
@@ -113,8 +138,10 @@
 
       <h2>9. Security incidents</h2>
       <p>
-        We maintain procedures for investigating suspected unauthorized access or disclosure. When notification is
-        required, we will notify affected sellers, Etsy, and relevant authorities within the applicable time requirements.
+        We maintain procedures for investigating suspected unauthorized access or disclosure. If Etsy Member data
+        accessed through the Etsy API is compromised or suspected to be compromised, Grace &amp; Crafted Inc. will notify
+        Etsy at <a href="mailto:dpo@etsy.com">dpo@etsy.com</a> and the affected Etsy seller promptly, and no later than
+        24 hours after discovery. We will also notify relevant authorities when required by applicable law.
       </p>
 
       <h2>10. International processing</h2>
@@ -141,7 +168,7 @@
         <div class="footer-links"><strong>Policies</strong><a href="security.html">Security &amp; Data Isolation</a><a href="terms.html">Terms of Service</a></div>
         <div class="footer-links"><strong>Help</strong><a href="support.html">Support</a><a href="support.html#delete">Data deletion</a></div>
       </div>
-      <div class="footer-bottom">The term “Etsy” is a trademark of Etsy, Inc. LocalShopOps uses Etsy's API but is not endorsed or certified by Etsy.</div>
+      <div class="footer-bottom">The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</div>
     </div>
   </footer>
 </body>

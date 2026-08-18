@@ -14,6 +14,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#readiness">Readiness</a>
         <a href="security.html">Security</a>
         <a href="privacy.html">Privacy</a>
         <a href="support.html">Support</a>
@@ -37,7 +38,8 @@
         <div class="status-note">
           <strong>Availability:</strong> LocalShopOps began as a tool for the developer's own shop and is currently
           used by a limited pilot group of independently owned Etsy sellers. Broader seller availability is pending
-          Etsy Commercial Access approval.
+          Etsy Commercial Access approval. The current Local Edition keeps live Etsy write operations disabled while
+          the Commercial Access connection, consent, data-freshness, and reviewer-access controls are finalized.
         </div>
       </div>
     </section>
@@ -63,7 +65,7 @@
           <article class="card">
             <span class="number">03</span>
             <h3>Production and fulfillment</h3>
-            <p>Create controlled reports, production instructions, supplier workbooks, and fulfillment task lists.</p>
+            <p>Create seller-directed production instructions, supplier workbooks, and fulfillment task lists. Exports are not automatically disclosed to suppliers.</p>
           </article>
           <article class="card">
             <span class="number">04</span>
@@ -89,13 +91,13 @@
         <div class="section-heading">
           <p class="eyebrow">OAuth authorization</p>
           <h2>Each seller connects their own Etsy account</h2>
-          <p>LocalShopOps uses Etsy Open API v3 and Etsy OAuth 2.0. It does not ask sellers to provide Etsy passwords.</p>
+          <p>LocalShopOps connects to Etsy Open API v3 through Etsy's OAuth 2.0 Authorization Code flow with PKCE. It does not ask sellers to provide Etsy passwords.</p>
         </div>
         <div class="grid">
           <article class="card">
             <span class="number">1</span>
             <h3>Seller starts the connection</h3>
-            <p>The seller chooses to connect Etsy from LocalShopOps and is redirected to Etsy's authorization screen.</p>
+            <p>For the Commercial Access release, the seller must first accept the LocalShopOps Terms and Privacy Policy, then choose Connect Etsy.</p>
           </article>
           <article class="card">
             <span class="number">2</span>
@@ -116,7 +118,7 @@
         <div class="section-heading">
           <p class="eyebrow">Minimum permissions</p>
           <h2>Only the access needed for enabled functions</h2>
-          <p>Scopes may vary by feature. A seller must re-authorize if an additional scope is needed.</p>
+          <p>The planned production Commercial Access scope set will be limited to the functions below. A seller must re-authorize if an additional scope is later required.</p>
         </div>
         <div>
           <table class="scope-table">
@@ -128,7 +130,7 @@
               <tr><td><code>shops_r</code></td><td>Read necessary information about the Etsy shop connected by the seller.</td></tr>
             </tbody>
           </table>
-          <p><strong>Not requested for current functions:</strong> listing deletion and buyer email access.</p>
+          <p><strong>Not requested for current functions:</strong> the listing-deletion scope and access to the <code>buyer_email</code> field.</p>
         </div>
       </div>
     </section>
@@ -144,10 +146,60 @@
           <li>OAuth credentials and connection records are separated by seller and shop.</li>
           <li>Orders, listings, jobs, permissions, exports, and audit records remain shop-scoped.</li>
           <li>No cross-seller search, copying, or multi-shop listing modification is provided.</li>
+          <li>No cross-seller benchmarking, marketplace analytics, or competitive analysis is created from Etsy API data.</li>
           <li>Etsy data is not sold, exchanged, used for advertising, or used to train AI models.</li>
           <li>No Etsy page scraping and no collection of Etsy member passwords.</li>
           <li>Sellers can revoke Etsy authorization and request deletion of associated LocalShopOps data.</li>
         </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="section-heading">
+          <p class="eyebrow">Seller-directed exports</p>
+          <h2>Production data is shared only for a seller's workflow</h2>
+          <p>Supplier and fulfillment exports are generated only when an authorized user selects the destination and initiates the export.</p>
+        </div>
+        <ul class="check-list">
+          <li>Exports may include order, item, personalization, recipient, or destination information only when reasonably necessary for the seller-directed production or fulfillment task.</li>
+          <li>LocalShopOps does not automatically disclose Etsy member data to suppliers, other sellers, or unrelated third parties.</li>
+          <li>Buyer email access is not requested for current functions.</li>
+          <li>Each seller remains responsible for choosing and authorizing its production and fulfillment providers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="readiness" class="alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Commercial Access readiness</p>
+          <h2>Limited pilot now; broader access only after Etsy approval</h2>
+          <p>LocalShopOps is being prepared for Etsy's manual Commercial Access review and will not open broader seller access before approval.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="number">01</span>
+            <h3>Tested Local Edition</h3>
+            <p>The limited pilot uses a local-first operations interface with explicit confirmation and audit records for sensitive operations.</p>
+          </article>
+          <article class="card">
+            <span class="number">02</span>
+            <h3>Reviewer access</h3>
+            <p>Etsy reviewers may request a controlled demo, test instructions, and an interface walkthrough through the monitored support address.</p>
+          </article>
+          <article class="card">
+            <span class="number">03</span>
+            <h3>Compliance controls</h3>
+            <p>Data freshness, caching, incident notification, supplier disclosure, revocation, and deletion requirements are documented for implementation and verification before broader access.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="etsy-disclaimer" aria-label="Etsy trademark notice">
+      <div class="container">
+        The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.
       </div>
     </section>
   </main>
@@ -175,7 +227,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        The term “Etsy” is a trademark of Etsy, Inc. LocalShopOps uses Etsy's API but is not endorsed or certified by Etsy.
+        The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.
       </div>
     </div>
   </footer>
