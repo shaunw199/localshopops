@@ -38,8 +38,10 @@
         <div class="status-note">
           <strong>Availability:</strong> LocalShopOps began as a tool for the developer's own shop and is currently
           used by a limited pilot group of independently owned Etsy sellers. Broader seller availability is pending
-          Etsy Commercial Access approval. The current Local Edition keeps live Etsy write operations disabled while
-          the Commercial Access connection, consent, data-freshness, and reviewer-access controls are finalized.
+          Etsy Commercial Access approval. The isolated Commercial Review candidate has completed offline acceptance
+          testing for authorization, consent, tenant isolation, data freshness, write confirmation, revocation, and
+          deletion controls. Real Etsy API credentials and production write operations remain disabled until the
+          production environment is configured and the required approval is received.
         </div>
       </div>
     </section>
@@ -60,7 +62,7 @@
           <article class="card">
             <span class="number">02</span>
             <h3>Listing workflows</h3>
-            <p>Review listings and prepare seller-initiated listing drafts and edits with explicit confirmation.</p>
+            <p>Review listings, create drafts, and prepare seller-initiated listing or inventory edits with fresh-state checks and explicit confirmation.</p>
           </article>
           <article class="card">
             <span class="number">03</span>
@@ -86,7 +88,35 @@
       </div>
     </section>
 
-    <section id="how-it-works" class="alt">
+    <section class="alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Write-operation boundaries</p>
+          <h2>Human-confirmed changes with conservative limits</h2>
+          <p>The Commercial Review candidate applies the same organization, shop, policy, snapshot, and audit controls to every supported Etsy write workflow.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="number">01</span>
+            <h3>Preview before change</h3>
+            <p>A seller-authorized user sees a field-level preview and must confirm before a listing or inventory change is submitted.</p>
+          </article>
+          <article class="card">
+            <span class="number">02</span>
+            <h3>Single-shop batch only</h3>
+            <p>A batch may modify listings in one authorized shop only. Cross-shop editing, copying, and migration are rejected.</p>
+          </article>
+          <article class="card">
+            <span class="number">03</span>
+            <h3>One draft at a time</h3>
+            <p>Publishing is limited to one live draft after a fresh Etsy read, a fee warning, and a separate second confirmation.</p>
+          </article>
+        </div>
+        <p><strong>Not supported:</strong> batch or automatic publishing, scheduled writes, listing deletion, deactivation, renewal, or automatic renewal.</p>
+      </div>
+    </section>
+
+    <section id="how-it-works">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">OAuth authorization</p>
@@ -118,7 +148,7 @@
         <div class="section-heading">
           <p class="eyebrow">Minimum permissions</p>
           <h2>Only the access needed for enabled functions</h2>
-          <p>The planned production Commercial Access scope set will be limited to the functions below. A seller must re-authorize if an additional scope is later required.</p>
+          <p>The Commercial Access production scope set is limited to the functions below. A seller must re-authorize if an additional scope is later required.</p>
         </div>
         <div>
           <table class="scope-table">
@@ -146,6 +176,7 @@
           <li>OAuth credentials and connection records are separated by seller and shop.</li>
           <li>Orders, listings, jobs, permissions, exports, and audit records remain shop-scoped.</li>
           <li>No cross-seller search, copying, or multi-shop listing modification is provided.</li>
+          <li>Listing deletion, deactivation, renewal, and automatic renewal are not provided.</li>
           <li>No cross-seller benchmarking, marketplace analytics, or competitive analysis is created from Etsy API data.</li>
           <li>Etsy data is not sold, exchanged, used for advertising, or used to train AI models.</li>
           <li>No Etsy page scraping and no collection of Etsy member passwords.</li>
@@ -180,8 +211,8 @@
         <div class="grid">
           <article class="card">
             <span class="number">01</span>
-            <h3>Tested Local Edition</h3>
-            <p>The limited pilot uses a local-first operations interface with explicit confirmation and audit records for sensitive operations.</p>
+            <h3>Offline acceptance complete</h3>
+            <p>The isolated candidate has passed the defined offline acceptance suite for authorization, data isolation, listing and inventory workflows, lifecycle controls, and the English reviewer interface.</p>
           </article>
           <article class="card">
             <span class="number">02</span>
@@ -191,7 +222,7 @@
           <article class="card">
             <span class="number">03</span>
             <h3>Compliance controls</h3>
-            <p>Data freshness, caching, incident notification, supplier disclosure, revocation, and deletion requirements are documented for implementation and verification before broader access.</p>
+            <p>Data freshness, caching, incident notification, supplier disclosure, revocation, deletion, and backup-expiry controls are implemented and verified in the isolated candidate. Production deployment remains a separate approval gate.</p>
           </article>
         </div>
       </div>
@@ -233,3 +264,4 @@
   </footer>
 </body>
 </html>
+
