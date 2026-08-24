@@ -24,7 +24,7 @@
     <div class="container">
       <p class="eyebrow">Help center</p>
       <h1>Support &amp; Data Requests</h1>
-      <p class="meta">Last updated: August 18, 2026</p>
+      <p class="meta">Last updated: August 24, 2026</p>
 
       <div class="notice">
         Support is available at <a href="mailto:gracecrafted2025@outlook.com">gracecrafted2025@outlook.com</a>. Please do not send Etsy
@@ -55,7 +55,9 @@
       </ol>
       <p>
         Revocation prevents future Etsy API access with that authorization. The seller may also contact LocalShopOps
-        support to mark the shop disconnected in LocalShopOps and request deletion of stored OAuth credentials.
+        support to disconnect the shop within LocalShopOps. Disconnect immediately blocks new Etsy calls and related
+        work, starts credential cleanup, and removes working listing and inventory snapshots. The active refresh-token
+        copy is purged within 24 hours.
       </p>
 
       <h2 id="delete">Request data deletion</h2>
@@ -70,10 +72,13 @@
         <li>all of the above.</li>
       </ul>
       <p>
-        We may verify the request to protect the seller against unauthorized deletion. After verification, we will delete
-        stored OAuth credentials promptly and delete or de-identify Etsy operational data that is no longer reasonably
-        necessary within 30 days, except limited records that must be retained for legal, security, fraud-prevention, or
-        dispute-resolution purposes. We will confirm when the request is complete.
+        We may verify the request to protect the seller against unauthorized deletion. After verification, LocalShopOps
+        immediately revokes sessions, disables jobs, disconnects shops, and starts a tenant-scoped deletion workflow.
+        Stored operational Etsy data that is no longer reasonably necessary is deleted or de-identified within 30 days.
+        Deletion propagates through encrypted backups as they expire within 35 days. Restoring a backup does not reactivate
+        a closed account, revoked credentials, disabled jobs, or deleted working data. Limited records may be retained for
+        a documented legal, security, fraud-prevention, accounting, or dispute-resolution requirement. We will confirm
+        completion and identify any time-limited backup or legal-hold exception.
       </p>
 
       <h2>Privacy and security concerns</h2>
@@ -105,3 +110,4 @@
   </footer>
 </body>
 </html>
+
