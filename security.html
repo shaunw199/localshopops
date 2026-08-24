@@ -24,7 +24,7 @@
     <div class="container">
       <p class="eyebrow">Trust center</p>
       <h1>Security &amp; Data Isolation</h1>
-      <p class="meta">Last updated: August 18, 2026</p>
+      <p class="meta">Last updated: August 24, 2026</p>
 
       <div class="notice">
         LocalShopOps is designed for independently owned Etsy shops. Each seller's authorization and operational data
@@ -49,7 +49,7 @@
 
       <h2>Minimum access</h2>
       <p>
-        The planned production Commercial Access connection will be limited to <code>transactions_r</code>, <code>listings_r</code>,
+        The Commercial Access production connection is limited to <code>transactions_r</code>, <code>listings_r</code>,
         <code>listings_w</code>, and <code>shops_r</code> for currently planned functions. The listing-deletion scope and
         access to the <code>buyer_email</code> field are not part of current functionality. Any later increase in access
         requires a documented product need and seller re-authorization through Etsy.
@@ -74,7 +74,7 @@
       </p>
 
       <h2>Commercial data freshness and caching controls</h2>
-      <p>Before broader seller access is opened, LocalShopOps will implement and verify the following controls:</p>
+      <p>The isolated Commercial Review candidate implements and verifies the following controls. Production activation is gated on keeping them enabled:</p>
       <ul>
         <li>Displayed listing content will be refreshed or revalidated within Etsy's six-hour limit.</li>
         <li>Other displayed Etsy content will be refreshed or revalidated within Etsy's 24-hour limit.</li>
@@ -94,7 +94,7 @@
 
       <h2>Commercial launch control</h2>
       <p>
-        Before broader seller access is opened, LocalShopOps will require an affirmative click-through acceptance of the
+        Before broader seller access is opened, LocalShopOps requires an affirmative click-through acceptance of the
         current Terms of Service and Privacy Policy before an Etsy account can be connected. Acceptance records will
         include the LocalShopOps account, policy versions, acceptance time, and proportionate security audit information.
       </p>
@@ -108,8 +108,16 @@
 
       <h2>Revocation and deletion</h2>
       <p>
-        Sellers may revoke Etsy authorization from Etsy's Connected Apps page. They may also contact LocalShopOps to
-        disconnect a shop and request deletion of associated account and operational data. See the
+        Sellers may revoke Etsy authorization from Etsy's Connected Apps page. Disconnect immediately blocks new Etsy
+        calls, disables related work, begins removal of server-held credentials, and clears working listing and inventory
+        snapshots. The active refresh-token copy is purged within 24 hours.
+      </p>
+      <p>
+        A verified account-closure request immediately revokes sessions, disables jobs, disconnects shops, and starts a
+        tenant-scoped deletion workflow. Operational Etsy data is deleted or de-identified within 30 days, subject to a
+        documented legal or security hold. Encrypted backups expire within 35 days, and restoration does not reactivate
+        a closed account, credentials, jobs, or deleted working data. Deleting one seller organization does not affect another.
+        See the
         <a href="support.html#disconnect">disconnect instructions</a> and
         <a href="support.html#delete">data deletion process</a>.
       </p>
@@ -131,3 +139,4 @@
   </footer>
 </body>
 </html>
+
