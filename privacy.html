@@ -24,7 +24,7 @@
     <div class="container">
       <p class="eyebrow">Policy</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective and last updated: August 18, 2026</p>
+      <p class="meta">Effective and last updated: August 24, 2026</p>
 
       <div class="notice">
         This Privacy Policy explains how Grace &amp; Crafted Inc. (“LocalShopOps,” “we,” “us,” or “our”) processes information
@@ -68,7 +68,7 @@
       <ul>
         <li>connect the seller's authorized Etsy shop;</li>
         <li>synchronize and display authorized order, sales, shop, and listing data;</li>
-        <li>prepare and execute seller-confirmed listing workflows;</li>
+        <li>prepare and execute seller-confirmed listing and inventory workflows within the supported write boundaries;</li>
         <li>create operational, production, supplier, fulfillment, and management reports;</li>
         <li>maintain seller and shop permissions, data isolation, and auditability;</li>
         <li>protect LocalShopOps and Etsy users against errors, abuse, and unauthorized access; and</li>
@@ -108,8 +108,8 @@
       <h2>7. Etsy data freshness, caching, security, and retention</h2>
       <p>
         We apply technical and organizational safeguards intended to prevent unauthorized access, misuse, alteration,
-        loss, or disclosure. Before the Commercial Access connection is opened to broader seller use, LocalShopOps will
-        enforce the following limits whenever Etsy API content is displayed:
+        loss, or disclosure. The isolated Commercial Review candidate implements and tests the following limits. These
+        controls must remain active before any production Commercial Access connection is opened to broader seller use:
       </p>
       <ul>
         <li>displayed Etsy listing content will be refreshed or revalidated so it is not more than six hours older than the corresponding information on Etsy;</li>
@@ -118,11 +118,19 @@
         <li>cached Etsy content is retained only as long as reasonably necessary to provide the seller-requested service.</li>
       </ul>
       <p>
-        Etsy data is otherwise retained only as long as reasonably necessary to provide the requested service, maintain
-        proportionate security and audit records, resolve disputes, and meet legal obligations. After a verified account
-        or shop deletion request, OAuth credentials are removed promptly and Etsy operational data that is no longer
-        required is deleted or de-identified within 30 days, except limited records that must be retained by law or for
-        security, fraud-prevention, or dispute-resolution purposes.
+        Baseline production retention is limited by data class: OAuth state and PKCE records expire within 15 minutes or
+        on use; access-token caches expire with the token; listing and inventory working snapshots are retained for no
+        more than 90 days and are purged earlier on shop disconnect; order and transaction operational data is retained
+        for up to 24 months by default; generated supplier exports for 30 days by default; general operational logs for
+        90 days; and security or Etsy-write audit events for up to 24 months without secrets or unnecessary buyer text.
+      </p>
+      <p>
+        Disconnecting a shop immediately blocks new Etsy calls and begins credential cleanup. The active refresh-token
+        copy is purged within 24 hours, and associated working snapshots are removed. After a verified account closure
+        or deletion request, tenant-scoped Etsy operational data that is no longer required is deleted or de-identified
+        within 30 days. Deletion propagates through encrypted backups as they expire within 35 days. A restored backup
+        does not reactivate a closed account, revoked credentials, or disabled jobs. Limited audit records may be retained
+        when required by law or for documented security, fraud-prevention, accounting, or dispute-resolution purposes.
       </p>
 
       <h2>8. Seller choices and controls</h2>
@@ -173,3 +181,4 @@
   </footer>
 </body>
 </html>
+
