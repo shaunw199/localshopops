@@ -1,21 +1,18 @@
-# LocalShopOps website
+# LocalShopOps website migration
 
-Public product and policy website for LocalShopOps.
+The current LocalShopOps product and policy website is [localshopops.com](https://localshopops.com/), hosted on Cloudflare Pages.
 
-Commercial Access website edition: August 24, 2026.
+This repository preserves its history and serves only migration notices and redirects at the legacy GitHub Pages addresses. The former product and policy text is no longer served as current website content.
+
+- Home: https://localshopops.com/
+- Terms: https://localshopops.com/terms
+- Privacy: https://localshopops.com/privacy
+- Security: https://localshopops.com/security
+- Support: https://localshopops.com/support
+
+The HTML pages use a browser redirect with a visible fallback link. This is not an HTTP 301 redirect. Supported help anchors are preserved when JavaScript is enabled; query parameters are not forwarded.
 
 Service provider: Grace & Crafted Inc.
-
 Support: gracecrafted2025@outlook.com
 
-- `index.html` — product overview and OAuth explanation
-- `security.html` — seller and shop isolation practices
-- `privacy.html` — privacy policy
-- `terms.html` — terms of service
-- `support.html` — support, disconnect, and data deletion instructions
-
-LocalShopOps is an independent application that uses Etsy's API. It is not endorsed or certified by Etsy.
-
-The public copy reflects the isolated B7 Commercial Review candidate. It does not claim that real Etsy production
-credentials or writes are enabled before production configuration and Etsy approval.
-
+This migration does not change policy contents, grant Etsy permissions, establish production readiness, or submit a Commercial Access application.
